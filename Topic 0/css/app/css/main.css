@@ -8,16 +8,7 @@ body
     text-align: center;
     font-size: 14px;
     font-family: Arial, Helvetica, sans-serif;
-}
-
-body > * ,
-.content > * 
-{
-    border-radius: 10px;
-    border: 1px;
-    border-color: black;
-    padding: 1rem;
-    margin: 0.2rem;
+    font-weight: 20px;
 }
 
 .main-navigationbar,
@@ -69,4 +60,26 @@ body > * ,
 {
     background:  orangered;
     font-size: 10px;
+}
+
+
+body > * ,
+.content > * 
+{
+    border-radius: 10px;
+    border: 1px;
+    border-color: black;
+    padding: 1rem;
+    margin: 0.2rem;
+}
+
+[class^="r"]
+{
+    background: darkmagenta;
+}
+
+
+[class *= "a"]:not([class $= "r"])
+{
+    background : darkcyan;
 }
