@@ -1,0 +1,123 @@
+
+*, *:before, *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body
+{
+    height: 100%;
+    width: 960px;
+    background:  lightgray;
+    color: white;
+    text-align: center;
+    font-size: 16px;
+    font-weight:  bold;
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: content-box;
+}
+
+.container 
+{
+    width: 90%;
+    text-align: center;
+    margin: 0 auto; 
+    position: relative;
+}
+
+.left-content
+{
+    float: left;
+    position: absolute;
+    left: -5%;
+}
+
+.top-news 
+{
+    position: absolute;
+    float: left;
+    top: 20%;
+    left: 20%;
+    font-size: 30px;
+    text-align: left;
+    text-shadow: 2px 2px 8px black;
+}
+
+.top-news  h2,
+.main-news h2
+{
+    color: black;
+    
+}
+
+.top-news ul
+{
+    list-style-type: none;
+    font-size: 25px;
+}
+
+.main-news p {
+    font-size: 25px;    
+}
+
+.main-news
+{
+    position: absolute;
+    top: 120%;    
+    left: 20%;
+    font-size: 30px;
+    text-align: left;
+    text-shadow: 2px 2px 8px black;
+}
+
+.content > img
+{
+    width: 100%    
+}
+
+.right-content
+{
+    float: right;
+}
+
+.clearfix 
+{
+  *zoom: 1;
+}
+
+/* Medium screens (320px) */
+@media screen and (max-width: 320px) { 
+  .content-container {
+    display: block;
+   }
+   .content {
+    display: block;
+   }
+   .content-title {
+    margin: 1rem 0;
+    color: black;
+   }
+}
+
+/* Medium screens (640px) */
+@media  screen and  (max-width: 640px) { 
+  .content-container {
+    float:left;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    width: 90%;
+  }
+  
+  .content {
+    display: block;
+   }
+}
+
+
+/* Large screens (1024px) */
+@media (min-width: 1024PX) 
+{ 
+        html { font-size: 120%; 
+    }
+}
