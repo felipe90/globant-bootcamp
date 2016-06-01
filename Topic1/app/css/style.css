@@ -1,5 +1,10 @@
 /* Custom Stylesheet */
 
+
+body 
+{
+	font-size: 16px;
+}
 .icon-block 
 {
   padding: 0 15px;
@@ -12,4 +17,15 @@
 .is-hidden 
 {
 	display: none;
+}
+
+.loadingImage 
+{
+	width: 10%;
+}
+
+.requestBox 
+{
+	padding: 1em;
+	margin: 0 30%;
 }

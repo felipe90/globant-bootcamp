@@ -6,20 +6,59 @@
 	var hidenElement = document.getElementById("hidenSection");
 	var requestContent = document.getElementById("requestContent");
 	var requestTitle = document.getElementById("requestTitle");
+	var loadingImg = document.getElementById("loadingImg");
+	/*
+	Request Object desc.
+		method -> can be "GET","POST","PUT","DELETE"
+		url -> url to request
+		isAsync -> "if the reques asyncronous?"
+		user -> The optional user name to use for authentication purposes
+		password -> The optional password to use for authentication purposes
+	*/
 
+	var requesConfig = {
+		method : "GET", 
+		url :"http://api.icndb.com/jokes/random", 
+		isAsync : true, 
+		user : "",
+		password : "",
+	}
+
+		var badRequesConfig = {
+		method : "GET", 
+		url :"http://fail", 
+		isAsync : true, 
+		user : "",
+		password : "",
+	}
 
 
 	button.addEventListener("click", function () {
-		if(hidenElement.classList.contains('is-hidden')){
+		if( hidenElement.classList.contains('is-hidden') ){
     		fadeIn(hidenElement);
-    		promise = AJAXRequest("http://api.icndb.com/jokes/random");
 
-    		promise.done(function (res){
-    			console.log(res);
-    			requestTitle.innerHTML = JSON.parse(res).type;
-				requestContent.innerHTML = JSON.parse(res).value.joke;
-    		});
+    		//request for a promise
+    		var promise = AJAXRequest(requesConfig);
+
+
+			promise.then(function(res) {
+				console.log("Success!", res);
+				return JSON.parse(res);
+			}).then(function (res) {
+				console.log(res);
+				requestTitle.innerHTML = "Random Joke";
+				requestContent.innerHTML = res.value.joke;
+			})
+			.catch(function(error) {
+				console.log("Failed!", error);
+				requestTitle.innerHTML = "Something going wrong";
+				requestTitle.style.color = "red";
+			}).then(function (res) {
+				fadeOut(loadingImg);
+			});
+
   		}
+
   		else {
     		fadeOut(hidenElement);
   		}
@@ -28,14 +67,14 @@
 
 
 	/*
-		return ES6 Promise
+		return Promise
 	*/
-	function AJAXRequest (url) {
+	function AJAXRequest (config) {
 
 		return new Promise( function( resolve, reject ) {
 	
 			var req = new XMLHttpRequest();
-			req.open('GET', url);
+			req.open(config.method, config.url, config.isAsync, config.user, config.password);
 
 			req.onload = function() {
 				if (req.status == 200) {
@@ -47,13 +86,17 @@
 			};
 
 			req.onerror = function() {
-			reject(Error("Network Error"));
+				reject(Error("Somethig going wrong"));
 			};
 
 			req.send();
 		});
 	}
 
+
+	/*
+		fade out function
+	*/
 	function fadeOut(element) {
 	
 		element.style.opacity = 1;
@@ -69,11 +112,14 @@
 
 	}
 
+	/*
+		fade in function
+	*/
 	function fadeIn(element) {
 
-		if (element.classList.contains('is-hidden')){
-    		element.classList.remove('is-hidden');
-  		}
+		// if (element.classList.contains('is-hidden')){
+  //   		element.classList.remove('is-hidden');
+  // 		}
 
 		element.style.opacity = 0;
 		element.style.display = "block";
