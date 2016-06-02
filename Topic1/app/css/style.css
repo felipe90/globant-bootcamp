@@ -24,6 +24,13 @@ body
 	width: 10%;
 }
 
+.repolist 
+{
+	margin: 0 1.5em;
+	vertical-align: top;
+	display: inline-block;
+}
+
 .requestBox 
 {
 	padding: 1em;

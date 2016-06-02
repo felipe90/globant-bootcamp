@@ -8,7 +8,8 @@ $( window ).on('load', function() {
 		let githubSection = document.getElementById("githubSection");
 		let inputKeyRepo = document.getElementById("repoKey");
 		let loading = document.getElementById("progress");
-		let repoList = document.getElementById("repoList");
+		let repoListHTML = document.getElementById("repoList1");
+		let repoListNode = document.getElementById("repoList2");
 
 		let requesConfig = {
 			method : "GET", 
@@ -33,12 +34,13 @@ $( window ).on('load', function() {
 						return JSON.parse(res);
 					}).then(function (res) {
 						renderMeta(res);
-						renderRepoList(res.items);
+						renderRepoListHTML(res.items);
+						renderRepoListNode(res.items);
 					})
 					.catch(function(error) {
 						console.log("Failed!", error);
 						githubSection.style.color = "red";
-						githubSection.innerHTML = "Something going wrong";
+						githubSection.innerHTML = "Something going wrong - Pls refresh page";
 					}).then(function (res) {
 						fadeOut(loading);
 					});
@@ -56,9 +58,10 @@ $( window ).on('load', function() {
 
 	/*
 		atrr json repo list 
+		add html list to DOM 
 	*/	
 
-	function renderRepoList(items) {
+	function renderRepoListHTML(items) {
 		let html = "<ul class='collection'>";
 		items.forEach(function ( item, index, array) {
 			html += "<li class='collection-item avatar hoverable'>";
@@ -69,7 +72,27 @@ $( window ).on('load', function() {
 			html += "</li>";
 		}) 
 		html += "</ul>";
-		repoList.innerHTML = html;
+		repoListHTML.innerHTML = html;
+	}
+
+	/*
+		atrr json repo list 
+		add table node list to DOM 
+	*/	
+	function renderRepoListNode(items) {
+		
+		let eUL = document.createElement("table");
+		
+		items.forEach(function (item, index, array) {
+			let eRow = document.createElement("tr");
+			let eCol = document.createElement("td");			
+			eCol.appendChild(document.createTextNode(item.name));
+
+			eRow.appendChild(eCol);
+			eUL.appendChild(eRow);
+		});
+
+		repoListNode.appendChild(eUL);
 	}
 
 	function renderMeta(data) {
