@@ -27,5 +27,10 @@ body
 .requestBox 
 {
 	padding: 1em;
-	margin: 0 30%;
+	margin: 0 10%;
+}
+
+.mainContainer > section
+{
+	display: inline-block;
 }
