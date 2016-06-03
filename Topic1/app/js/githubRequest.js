@@ -13,7 +13,7 @@ $( window ).on('load', function() {
 
 		let requesConfig = {
 			method : "GET", 
-			url :"https://api.github.com/search/repositories?q=%27JavaScript%27&page=1&per_page=10", 
+			url :"", 
 			isAsync : true, 
 			user : "",
 			password : "",
@@ -28,6 +28,9 @@ $( window ).on('load', function() {
 				if( githubSection.classList.contains('is-hidden') ){
 	    			fadeIn(githubSection);
 
+	    			//set url with request
+	    			requesConfig.url = "https://api.github.com/search/repositories?q=%27" + inputKeyRepo.value + "%27&page=1&per_page=10";
+	    			
 	    			let promise = AJAXRequest(requesConfig);
 
 					promise.then(function(res) {
