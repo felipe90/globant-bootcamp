@@ -1,5 +1,5 @@
 'use strict'
-
+import normalize from 'normalize.css';
 import Movie from './class/Movie';
 import Logger from './class/Logger';
 
