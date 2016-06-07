@@ -1,10 +1,18 @@
-import EventEmitter from './class/EventEmitter';
+'use strict'
 
-$( window ).on('load', function() {
+import Movie from './class/Movie';
+import Logger from './class/Logger';
 
-	let hi = `hello world`;
+// main function
 
-	console.log( ${hi}+`hi with ES6`);
+{
 
-	
-});
+	let terminator = new Movie ( 'Terminator', 1984, 90);
+	let logger = new Logger();
+
+	// terminator.on('play', logger.log);
+
+	//..
+
+	// terminator.play();
+}

@@ -1,8 +1,24 @@
-class EventEmitter{
+/*
+	EventEmitter Class
+*/
+
+class EventEmitter {
 	
- 	constructor(args) {
- 		// code
+	constructor() {
+		// code
+	}
+
+ 	on() {
+ 		
  	}
- 
- 	// methods
- } EventEmitter
+
+ 	emit() {
+ 		
+ 	}
+
+ 	off() {
+ 		
+ 	}
+ }
+
+export default EventEmitter;
