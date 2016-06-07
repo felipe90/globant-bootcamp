@@ -4,14 +4,15 @@
 */
 
 class Logger {
-	
-	constructor(args) {
-		// code
-	}
+  
+  log(subject) {
+    this.subject = subject;
+    this.subject.on( 'play', (data) => {
+    	console.log(" The 'play' event has been emitted")
+    });
 
-	log(info) {
-		console.log(info);
-	}
+  }
+
 }
 
 export default Logger;

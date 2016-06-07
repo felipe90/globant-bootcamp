@@ -15,15 +15,15 @@ class Movie extends EventEmitter {
  
  	
  	play() {
- 		
+ 		this.emit('play');
  	}
 
  	stop() {
- 		
+ 		this.emit('stop');
  	}
 
  	resume() {
- 		
+ 		this.emit('resume');
  	}
 }
 
