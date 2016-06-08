@@ -2,6 +2,7 @@
   "jspm": {
     "dependencies": {
       "material-ui": "npm:material-ui@^0.15.0",
+      "materialize-css": "npm:materialize-css@^0.97.6",
       "react": "npm:react@^15.1.0",
       "react-dom": "npm:react-dom@^15.1.0"
     },

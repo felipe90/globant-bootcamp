@@ -18,6 +18,7 @@ System.config({
     "babel-runtime": "npm:babel-runtime@5.8.38",
     "core-js": "npm:core-js@1.2.6",
     "material-ui": "npm:material-ui@0.15.0",
+    "materialize-css": "npm:materialize-css@0.97.6",
     "react": "npm:react@15.1.0",
     "react-dom": "npm:react-dom@15.1.0",
     "github:jspm/nodelibs-assert@0.1.0": {
@@ -197,6 +198,10 @@ System.config({
       "recompose": "npm:recompose@0.17.0",
       "simple-assign": "npm:simple-assign@0.1.0",
       "warning": "npm:warning@2.1.0"
+    },
+    "npm:materialize-css@0.97.6": {
+      "css": "github:systemjs/plugin-css@0.1.22",
+      "jquery": "github:components/jquery@2.2.4"
     },
     "npm:node-fetch@1.5.3": {
       "buffer": "github:jspm/nodelibs-buffer@0.1.0",
