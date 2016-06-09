@@ -4,13 +4,14 @@ import materialize from 'materialize-css';
 import EventEmitter from "./class/EventEmitter";
 import Movie from './class/Movie';
 import Logger from './class/Logger';
-//import Social from "./class/Social";
 import Actor from "./class/Actor";
+
+//import Social from "./class/Social";
 
 // main function
 {
 
-	//point 1,2,3
+	//----------------point 1,2,3
 	let consoleBox = document.getElementById("consoleBoxId");
 
 	let terminator = new Movie ( 'Terminator I', 1985, 60);
@@ -24,8 +25,7 @@ import Actor from "./class/Actor";
 	terminator.play();
 
 	
-
-	// point 6, mix literal with EventEmitter obj
+	//----------------point 6, mix literal with EventEmitter obj
 	
 	let social = {
 
@@ -51,7 +51,9 @@ import Actor from "./class/Actor";
 	terminator.share('Felipe Rojas');
 	terminator.like('Felipe Rojas');
 
-	//point 7,8
+
+	//----------------point 7,8
+	
 	let arnold = new Actor('Arnold Schwarzenegger', 50);
 	let otherCast = [
 		new Actor('Paul Winfield', 50),
@@ -62,7 +64,7 @@ import Actor from "./class/Actor";
 	terminator.addCast(arnold);
 
 	logger.consoleLog(terminator);
-	
+
 	terminator.addCast(otherCast); //Movie must contain an array of 4 actors
 
 	logger.consoleLog(terminator);
