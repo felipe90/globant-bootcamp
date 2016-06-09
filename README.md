@@ -11,7 +11,7 @@ jspm install
 ```
 To se more documentation about jspm go here,
 ```
-thttp://jspm.io/docs/getting-started.html
+http://jspm.io/docs/getting-started.html
 ```
 
 #Have a nice day :)
