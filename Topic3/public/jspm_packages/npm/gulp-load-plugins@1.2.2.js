@@ -1,0 +1,1 @@
+module.exports = require("npm:gulp-load-plugins@1.2.2/index");

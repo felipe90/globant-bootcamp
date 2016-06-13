@@ -1,0 +1,19 @@
+<md-content class="md-padding">
+
+    <md-card>
+        <md-card-title>
+            <md-card-title-text>
+                <span class="md-headline">{{ctrl.title}}</span>
+            </md-card-title-text>
+        </md-card-title>
+
+        <md-card-content>
+            <md-input-container class="md-block">
+                <label>Search by Title</label>
+                <input type="text" ng-model="ctrl.newPost.title">
+            </md-input-container>
+            <md-button class="md-raised md-primary" aria-label="description" ng-click="ctrl.DeleteMovie()">Delete Movie</md-button>    
+        </md-card-content>
+    </md-card>
+
+</md-content>

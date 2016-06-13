@@ -1,0 +1,16 @@
+
+
+<md-content flex layout-padding class="md-padding" ng-controller="Controller as ctrl">
+    <h1 class="md-display-1" >Most popular movie list</h1>  
+    <md-progress-linear md-mode="indeterminate" ng-hide="{{!ctrl.items[0]}}" ></md-progress-linear>
+    <md-list> 
+        <md-list-item class="movie-item md-2-line" ng-repeat="item in ctrl.items" ng-click="ctrl.ShowAuthorDetail(item)">
+            <img ng-src="http://image.tmdb.org/t/p/w500/{{item.poster_path}}" class="item-image" width="100" alt="{{item.original_title}}" />
+            <div class="md-list-item-text" layout="column" >
+                <h2 class="md-display-1" > {{item.original_title}}</h2>
+                <h3 class="md-display-1">Relase date: {{item.release_date}}</h3>
+            </div>
+        </md-list-item>
+    </md-list> 
+</md-content>
+
