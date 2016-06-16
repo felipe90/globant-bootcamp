@@ -27,6 +27,7 @@ class ItemsService {
 	getItems () {
 		return this.dataPromise;
 	}
+
 }
 
 ItemsService.$inject = [ '$http' , 'config'];

@@ -35,10 +35,10 @@ class Controller {
 				.ariaLabel('New Movie')
 				.ok('Got it!')
 				.targetEvent(event)
-			);
-
-
-
+			)
+			.finally(function () {
+			 	this.location.path('/');
+		});
 	}
 
 }

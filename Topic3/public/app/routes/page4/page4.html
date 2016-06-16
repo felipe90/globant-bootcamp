@@ -10,9 +10,17 @@
         <md-card-content>
             <md-input-container class="md-block">
                 <label>Search by Title</label>
-                <input type="text" ng-model="ctrl.newPost.title">
+                <input type="text" ng-model="ctrl.search">
             </md-input-container>
-            <md-button class="md-raised md-primary" aria-label="description" ng-click="ctrl.DeleteMovie()">Delete Movie</md-button>    
+            <md-list> 
+                <md-list-item class="movie-item md-2-line" ng-repeat="item in ctrl.items | filter:ctrl.search" ng-click="ctrl.DeleteMovie(item)">
+                    <img ng-src="http://image.tmdb.org/t/p/w500/{{item.poster_path}}" class="item-image" width="100" alt="{{item.original_title}}" />
+                    <div class="md-list-item-text" layout="column" >
+                        <h2 class="md-display-1" > {{item.original_title}}</h2>
+                        <h3 class="md-display-1">Relase date: {{item.release_date}}</h3>
+                    </div>
+                </md-list-item>
+            </md-list>   
         </md-card-content>
     </md-card>
 

@@ -8,11 +8,47 @@
         </md-card-title>
 
         <md-card-content>
-            <md-input-container class="md-block">
-                <label>Search by Title</label>
-                <input type="text" ng-model="ctrl.newPost.title">
-            </md-input-container>
-            <md-button class="md-raised md-primary" aria-label="description" ng-click="ctrl.EditMovie()">Edit Movie</md-button>   
+
+            <md-content ng-show="{{ctrl.isEditing}}" layout-wrap>
+                <md-input-container class="md-block">
+                    <label>Title</label>
+                    <input type="text" ng-model="ctrl.editItem.original_title">
+                </md-input-container>
+
+                <md-input-container class="md-block">
+                    <label>Overview</label>
+                    <textarea ng-model="ctrl.editItem.overview"></textarea>
+                </md-input-container>
+
+                <md-input-container class="md-block">
+                    <label>Image Url</label>
+                    <input type="text" ng-model="ctrl.editItem.poster_path">
+                </md-input-container>
+            
+                <md-datepicker ng-model="ctrl.editItem.release_date" md-placeholder="Realse Date"></md-datepicker>     
+
+                <md-button class="md-raised md-primary" aria-label="description" ng-click="ctrl.UpdateItem()">Edit Movie</md-button>
+            </md-content>
+             
+            <md-divider></md-divider>
+                <md-input-container class="md-block">
+                    <label>Search by Title</label>
+                    <input type="text" ng-model="ctrl.search">
+                </md-input-container>
+            <md-divider></md-divider>
+
+            <md-list> 
+                <md-list-item class="movie-item md-2-line" ng-repeat="item in ctrl.items | filter:ctrl.search" ng-click="ctrl.EditMovie(item)">
+                    <img ng-src="http://image.tmdb.org/t/p/w500/{{item.poster_path}}" class="item-image" width="100" alt="{{item.original_title}}" />
+                    <div class="md-list-item-text" layout="column" >
+                        <h2 class="md-display-1" > {{item.original_title}}</h2>
+                        <h3 class="md-display-1">Relase date: {{item.release_date}}</h3>
+                    </div>
+                </md-list-item>
+            </md-list> 
+            <md-card-content>
+            
+
         </md-card-content>
     </md-card>
 
