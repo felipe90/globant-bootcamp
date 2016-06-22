@@ -1,0 +1,68 @@
+[draggable] {
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+  /* Required to make elements draggable in old WebKit */
+  -khtml-user-drag: element;
+  -webkit-user-drag: element;
+}
+
+body {
+	text-align: center;
+	font-size: 16px;
+	background: #EEE;
+}
+
+.button-save-section > *{
+	display: inline-block;
+	margin: 0.2rem;
+}
+
+.header-section {
+	padding: 0.1rem;
+	background: #3e2723;
+	color: #FFF;
+}
+
+.drag-section .draggable {
+	padding: 0.5rem;
+	border: dashed; 1px black;
+	margin: 0 1rem;
+}
+
+.drag-section input {
+	margin: 0.5rem;
+}
+
+.save-section {
+	display: inline-block;
+	margin: 0 0 0 1rem;
+}
+
+.save-section > * {
+	display: block;
+	margin: 1rem 0;
+}
+
+.save-section input[type="button"]{
+	background: #3e2723;
+	color: #FFF;
+	border: none;
+	padding: 0.5rem;
+	box-shadow: 1px 3px 5px #888888;#AAA solid 2px;
+	transition: all 0.1s ;
+}
+
+.save-section input[type="button"]:hover{
+	transform: scale(1.05);
+}
+
+.save-section.over {
+	border: dashed; 1px black;
+}
+
+.main-container > * {
+	display: inline-block;
+	vertical-align: top;
+}
