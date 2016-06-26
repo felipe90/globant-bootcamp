@@ -1,7 +1,7 @@
 # globant-bootcamp
 
 
-To run topic 2,3 please install jspm package manager.In comand line type, 
+To run topic 2,3 please install jspm package manager. In command line type, 
 ```
 npm install jspm -g
 ```
@@ -9,7 +9,7 @@ Next, clone repo into local folder. Open command line into folder that have 'con
 ```
 jspm install
 ```
-To se more documentation about jspm go here,
+To see more documentation about jspm go here,
 ```
 http://jspm.io/docs/getting-started.html
 ```
