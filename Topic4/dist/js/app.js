@@ -60,7 +60,6 @@ window.onload = function () {
 			e.stopPropagation(); // Stops some browsers from redirecting.
 		}
 			
-		console.log(e.dataTransfer.getData('text/html'));
 		this.value = e.dataTransfer.getData('text/html');
 		
 		return false;
@@ -114,6 +113,7 @@ window.onload = function () {
 				
 				fileText.text = res;
 				fileText.src = fileButton.value;
+				draggComp.style.display = "block";
 				draggComp.innerHTML = "File : "+ fileText.src ;
 				return fileText;
 			})
